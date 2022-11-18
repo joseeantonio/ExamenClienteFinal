@@ -12,6 +12,8 @@ function isLeapYear(anio1,anio2) {
     let anioDos = anio2
     //array vacio para ir añadiendo nuemro bisiestos
     let numerosBisiestos = []
+    var arrayFinal = []
+    let coma = ""
     //Comprobamos si son numeros
     if (!isNaN(anioUno)){
         if (!isNaN(anioDos)){
@@ -22,6 +24,14 @@ function isLeapYear(anio1,anio2) {
                 if (anioDos<=2500){
                     //Recorremos el rango de numeros entre los dos
                     for (var i=anioUno;anioDos;i++){
+                        if (i === anioDos){
+                            for (var i=0;numerosBisiestos.length;i++){
+                                arrayFinal += coma+numerosBisiestos[i]+" "
+                                coma = ","
+                            }
+                            console.log(arrayFinal)
+                            return arrayFinal
+                        }
                         //Segun las condiciones lo añadimos a el array de numeroBisiestos
                         if (i%4===0){
                             numerosBisiestos.push(i)
@@ -32,7 +42,7 @@ function isLeapYear(anio1,anio2) {
                                 numerosBisiestos.push(i)
                             }
                         }
-                    }return numerosBisiestos
+                    }
                 }else{
                     window.alert(anioDos+" es mayor que 2005")
                     return;

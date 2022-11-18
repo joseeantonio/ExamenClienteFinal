@@ -23,11 +23,11 @@ function isLeapYear(anio1,anio2) {
                     //Recorremos el rango de numeros entre los dos
                     for (var i=anioUno;anioDos;i++){
                         //Segun las condiciones lo añadimos a el array de numeroBisiestos
-                        if (i%4){
+                        if (i%4===0){
                             numerosBisiestos.push(i)
                             console.log(i)
-                        }else if (i%100){
-                            if (i%400){
+                        }else if (i%100===0){
+                            if (i%400===0){
                                 console.log(i)
                                 numerosBisiestos.push(i)
                             }
